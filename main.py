@@ -9,6 +9,6 @@ import time
 
 
 x = "./test/"
-for filename in os.listdir(x):
-    start(x+filename)
+# for filename in os.listdir(x):
+start(x+"bbcuk.json")
 

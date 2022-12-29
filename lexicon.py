@@ -22,37 +22,38 @@ def lex(path):
     # load json file and conver to disctionary in python
     file = open(path, "r", encoding="utf8")
     data = json.load(file)
-    print(len(data))
+    # print(len(data))
     
-    # parsing on thecontents of data to remove stop words and dupicates
-    data=pandas.DataFrame(data)
+    # # parsing on thecontents of data to remove stop words and dupicates
+    # data=pandas.DataFrame(data)
 
     # list of stop words in english
     stop_words = set(stopwords.words('english'))
 
 
-    lexicons=data['content'].apply(lambda x: ' '.join(
-    [port.stem(word) for word in x.split(" ") if word.lower() not in (stop_words)]))
+    # lexicons=data['content'].apply(lambda x: ' '.join(
+    # [port.stem(word) for word in x.split(" ") if word.lower() not in (stop_words)]))
     
-    lexicons = lexicons.str.replace(r'[^\w\s]+','')
+    # lexicons = lexicons.str.replace(r'[^\w\s]+','')
 
 
-    lexicons = lexicons.str.split()
+    # lexicons = lexicons.str.split()
 
-    l=[]
+    # l=[]
     
-    lexicons=lexicons.values.tolist()
+    # lexicons=lexicons.values.tolist()
    
-    for m in lexicons:
-        l+=m
-    # tem=[]
-    # for m in data:
-    #     temps=tokenizer.tokenize(m["content"])
-    #     tem+=list(set([port.stem(w) for w in temps if not w.lower() in stop_words]))
-    # lexicons=dict(enumerate(tem))  
+    # for m in lexicons:
+    #     l+=m
+    tem=[]
+    
+    for m in data:
+        temps=tokenizer.tokenize(m["content"])
+        tem += list(set([port.stem(w) for w in temps if (not w.lower() in stop_words) and (not (w.isdigit()  or w[0] == '-' and w[1:].isdigit()))]))
+
     
    
-    return (l)
+    return (set(tem))
 
 
 

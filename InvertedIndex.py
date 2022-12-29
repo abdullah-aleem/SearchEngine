@@ -30,33 +30,34 @@ def start(path):
         lexi=lex(path)
       
     
-    def f():
+    def fw():
         global fI
         fI=forwardIndex(path)
         
         print("===================================================================================================================================================================")
 
     t1 = threading.Thread(target=l,args=())
-    t2 = threading.Thread(target=f,args=())
+    t2 = threading.Thread(target=fw,args=())
     #starting the thread
     t1.start()
     t2.start()
 
     t1.join()
     t2.join()  
-    f = open('invertedIndex.json', 'a')
-    
+    # lexi=lex(path);
+    # fI=forwardIndex(path)
+    name="invertedIndex"+path+".json"
+    f = open(name, 'a')
 
-
+    print(len(lexi))
     for i in lexi:
         invertedInde[i]=[]
         
         for k,v in fI.items():
             if i in v:
-                invertedInde[i]+=[k]
+                invertedInde[i]+=[{"doc":k,"hits":v.count(i)}]
    
     f.write(json.dumps(invertedInde))
     f.close()
-   
 
 # have thread to apply same function to two differrent files together
