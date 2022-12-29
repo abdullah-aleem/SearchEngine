@@ -42,5 +42,5 @@ def forwardIndex(path):
         temps = tokenizer.tokenize(m["content"])
         
         # setting up forward index where docID is the id given
-        forwardInde[m['id']] = list(set([port.stem(w) for w in temps if not w.lower() in stop_words]))
+        forwardInde[m['id']] = [port.stem(w) for w in temps if not w.lower() in stop_words]
     return forwardInde
