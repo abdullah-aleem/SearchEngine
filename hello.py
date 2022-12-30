@@ -9,7 +9,7 @@ window = Tk()
 #window.set_theme('breeze')
 window.title("Main Window")
 window.geometry('2100x2100')
-window.configure(background='light blue')
+window.configure(background='thistle3')
 
 def getvals():
     # add sample text to scrollbar to show the screen
@@ -24,7 +24,7 @@ def getvals():
 #w.pack()
 
 #field names
-se_name = Label(window, text='DAISE', font='ar 60 bold', padx=625, pady=100, bg='light blue', fg='blue')
+se_name = Label(window, text='DAISE', font='ar 60 bold', padx=625, pady=100, bg='thistle3', fg='thistle4')
 se_name.grid(row=0, column=3)
 
 #creating entry field
