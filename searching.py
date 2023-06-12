@@ -9,6 +9,11 @@ import pandas
 import time
 
 
+
+
+
+
+
 #from tkinter import ttk, Canvas
 #from ttkthemes import ThemedTk, THEMES
 
@@ -18,14 +23,15 @@ window = Tk()
 # window.set_theme('breeze')
 window.title("Main Window")
 window.geometry('2100x2100')
-window.configure(background='light blue')
+window.configure(background='thistle3')
 
 
 def getvals():
-
+    
     # add sample text to scrollbar to show the screen
-
+    
     search = searchEntry.get()
+
 
     tokenizer = RegexpTokenizer(r'\w+')
 
@@ -43,7 +49,7 @@ def getvals():
     stop_words = set(stopwords.words('english'))
     words = tokenizer.tokenize(search)
     words = list(set([port.stem(w) for w in words if (not w.lower() in stop_words)
-                      and (not (w.isdigit() or w[0] == '-' and w[1:].isdigit()))]))
+                    and (not (w.isdigit() or w[0] == '-' and w[1:].isdigit()))]))
     docs = []
     names = []
     for i in words:
@@ -68,12 +74,12 @@ def getvals():
 
 # field names
 se_name = Label(window, text='Search SYSTEM', font='ar 60 bold',
-                padx=625, pady=100, bg='light blue', fg='blue')
+                padx=625, pady=100, bg='thistle3', fg='thistle4')
 se_name.grid(row=0, column=3)
 
 # creating entry field
 search_value = StringVar
-searchEntry = Entry(window,
+searchEntry = Entry(window, 
                     width=60, font=('Arial 16'))
 searchEntry.grid(row=1, column=3, pady=20)
 
