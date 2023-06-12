@@ -24,7 +24,7 @@ def getvals():
 #w.pack()
 
 #field names
-se_name = Label(window, text='DAISE', font='ar 60 bold', padx=625, pady=100, bg='light blue', fg='blue')
+se_name = Label(window, text='Search SYSTEM', font='ar 60 bold', padx=625, pady=100, bg='light blue', fg='blue')
 se_name.grid(row=0, column=3)
 
 #creating entry field
