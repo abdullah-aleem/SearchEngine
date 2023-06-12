@@ -9,7 +9,7 @@ window = Tk()
 #window.set_theme('breeze')
 window.title("Main Window")
 window.geometry('2100x2100')
-window.configure(background='light blue')
+window.configure(background='thistle3')
 
 def getvals():
     # add sample text to scrollbar to show the screen
