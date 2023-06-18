@@ -15,6 +15,7 @@ stemmer = PorterStemmer()
 
 def cleaning_text(text):
     # Tokenize the input text
+    text=text['content'].encode().decode()
     tokens = word_tokenize(text)
 
     # Remove the stop words and apply stemming using list comprehension
@@ -23,4 +24,4 @@ def cleaning_text(text):
         for token in tokens
         if (token.lower() not in stop_words) and punctuation_pattern.sub("", token).strip()
     ]
-    return processed_tokens
+    return processed_tokens 
