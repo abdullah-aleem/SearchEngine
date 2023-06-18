@@ -3,7 +3,7 @@ import re
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
-
+from numba import jit
 # Precompile regular expression pattern
 punctuation_pattern = re.compile(r"[^a-zA-Z\s]")
 
@@ -13,7 +13,9 @@ stop_words = set(stopwords.words("english"))
 # Initialize the stemmer
 stemmer = PorterStemmer()
 
-def cleaning_text(text):
+
+def cleaning_text(text,words):
+  
     # Tokenize the input text
     text=text['content'].encode().decode()
     tokens = word_tokenize(text)
@@ -24,4 +26,5 @@ def cleaning_text(text):
         for token in tokens
         if (token.lower() not in stop_words) and punctuation_pattern.sub("", token).strip()
     ]
+    words+=processed_tokens
     return processed_tokens 
