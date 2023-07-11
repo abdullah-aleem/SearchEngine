@@ -21,7 +21,7 @@ def lexicon(file):
 
 
 start_time = time.time()  # Start measuring time
-result = lexicon("newsdata/yahoonews.json")
+result = lexicon("newsdata/newsbud.json")
 end_time = time.time()  # Stop measuring time
 execution_time = end_time - start_time
 
