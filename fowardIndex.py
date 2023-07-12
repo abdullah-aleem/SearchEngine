@@ -18,7 +18,6 @@ def forwardIndex(file):
         if data:
             data=pd.Series(data)
             x=data.apply(cleaning_text,args=(words,))
-            print(x[0])
     return x
 
 app=forwardIndex("newsdata/cnbc.json")
@@ -34,11 +33,9 @@ if os.path.exists(file_path):
 else:
     # File doesn't exist, create an empty data dictionary
     jdata = []
-
-
 # Save the updated data to the JSON file
-jdata+=list(app)
 
+
+jdata+=list(app)
 with open(file_path, "w+") as file:
-   
     json.dump(jdata, file)
