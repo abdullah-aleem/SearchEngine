@@ -21,7 +21,7 @@ def forwardIndex(file):
             print(x[0])
     return x
 
-app=forwardIndex("newsdata/newsbud.json")
+app=forwardIndex("newsdata/cnbc.json")
 
 
 

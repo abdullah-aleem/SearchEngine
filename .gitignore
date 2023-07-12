@@ -1,1 +1,4 @@
 newsdata/
+lexicon.json
+invertedIndex.json
+forwardIndex.json
