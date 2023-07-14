@@ -24,7 +24,6 @@ app=forwardIndex("newsdata/cnbc.json")
 
 
 
-
 # Check if the file exists
 if os.path.exists(file_path):
     # File exists, open it and load the existing data
@@ -32,10 +31,13 @@ if os.path.exists(file_path):
         jdata = json.load(file)
 else:
     # File doesn't exist, create an empty data dictionary
-    jdata = []
+    jdata = {}
 # Save the updated data to the JSON file
 
 
-jdata+=list(app)
+
+for y in list(app):
+    
+    jdata.update(y)
 with open(file_path, "w+") as file:
     json.dump(jdata, file)
